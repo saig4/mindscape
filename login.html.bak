@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .login-container img {
+            width: 100%;
+            max-height: 100px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+			border-width:2px;
+			border-color: #3498db;
+            box-sizing: border-box;
+        }
+
+        label {
+            
+            display:block;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+	<form>
+    <div class="login-container">
+        <img src="mindscape.png" alt="Logo">
+        <h2>Login</h2>
+        
+        <label>
+            <input type="radio" name="userType" value="user" checked> User
+        </label>
+        <label>
+            <input type="radio" name="userType" value="admin"> Admin
+        </label>
+        <label>
+            <input type="radio" name="userType" value="client"> Client
+        </label>
+
+        <input type="text" id="username" placeholder="Username (10 alphabets case sesitive)" required pattern="[A-Za-z]{10}">
+        <input type="password" id="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+
+        <button onclick="login()">Login</button>
+    </div>
+	</form>
+</body>
+</html>
+
